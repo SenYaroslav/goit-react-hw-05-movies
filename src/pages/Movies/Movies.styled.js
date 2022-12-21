@@ -30,7 +30,7 @@ export const Button = styled.button`
 `;
 
 export const LinkItem = styled(Link)`
-  margin-left: 20px;
+  margin-left: 10px;
   color: #212121;
 
   &.active {
@@ -47,6 +47,8 @@ export const LinkItem = styled(Link)`
 export const List = styled.ul`
   margin-left: 10px;
   font-size: 20px;
+  padding: 0;
+  list-style: none;
 `;
 
 export const Item = styled.li`

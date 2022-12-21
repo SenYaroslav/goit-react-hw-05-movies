@@ -9,6 +9,8 @@ export const H1 = styled.h1`
 export const List = styled.ul`
   margin-left: 10px;
   font-size: 20px;
+  padding: 0;
+  list-style: none;
 `;
 
 export const Item = styled.li`

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getTrending } from 'services/moviesApi';
 import * as sc from './Home.styled';
+import { BiMoviePlay } from 'react-icons/bi';
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -20,7 +21,8 @@ const Home = () => {
         {trendingMovies.length &&
           trendingMovies.map(({ id, title }) => (
             <sc.Item key={id}>
-              <sc.LinkItem to={`movies/${id}`} state={{ from: location }}>
+              <sc.LinkItem to={`movies/${id}`} state={{ from: location }} >
+                <BiMoviePlay style={{verticalAlign: 'bottom', marginRight: '10px'}}/>
                 {title}
               </sc.LinkItem>
             </sc.Item>

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useSearchParams  } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { Container, Input, Button, LinkItem, List, Item } from './Movies.styled';
 import { searchMovies } from 'services/moviesApi';
+import { BiMoviePlay } from 'react-icons/bi';
 
 const Movies = () => {
   const [moviesList, setMoviesList] = useState(null);
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query')
+  const query = searchParams.get('query');
 
   useEffect(() => {
     if (!query) {
@@ -30,7 +31,7 @@ const Movies = () => {
     const { value } = e.currentTarget.elements.query;
 
     if (value) {
-      setSearchParams({query: value})
+      setSearchParams({ query: value });
     }
   };
 
@@ -54,6 +55,7 @@ const Movies = () => {
             {moviesList.map(({ id, title }) => (
               <Item key={id}>
                 <LinkItem to={`${id}`} state={{ from: location }}>
+                  <BiMoviePlay style={{ verticalAlign: 'bottom', marginRight: '10px' }}/>
                   {title}
                 </LinkItem>
               </Item>

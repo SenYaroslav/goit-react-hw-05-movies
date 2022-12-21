@@ -10,7 +10,6 @@ const Reviews = () => {
   useEffect(() => {
     getMovieReviews(movieId)
       .then(res => {
-        console.log(res);
         setMovieReviews(res.data.results);
       })
       .catch(console.log);

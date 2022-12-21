@@ -55,7 +55,7 @@ const Movies = () => {
             {moviesList.map(({ id, title }) => (
               <Item key={id}>
                 <LinkItem to={`${id}`} state={{ from: location }}>
-                  <BiMoviePlay style={{ verticalAlign: 'bottom', marginRight: '10px' }}/>
+                  <BiMoviePlay style={{ verticalAlign: "bottom", marginRight: '10px' }}/>
                   {title}
                 </LinkItem>
               </Item>

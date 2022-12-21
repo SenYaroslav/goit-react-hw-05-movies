@@ -22,7 +22,7 @@ const Home = () => {
           trendingMovies.map(({ id, title }) => (
             <sc.Item key={id}>
               <sc.LinkItem to={`movies/${id}`} state={{ from: location }} >
-                <BiMoviePlay style={{verticalAlign: 'bottom', marginRight: '10px'}}/>
+                <BiMoviePlay style={{verticalAlign: "bottom", marginRight: '10px'}}/>
                 {title}
               </sc.LinkItem>
             </sc.Item>

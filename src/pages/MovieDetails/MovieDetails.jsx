@@ -18,7 +18,7 @@ const MovieDetails = () => {
       .then(res => setMovie(res.data))
       .catch(console.log);
   };
-
+console.log('location >>>', location)
   const BackLinkHref = location.state?.from ?? '/';
 
   return (
@@ -54,12 +54,12 @@ const MovieDetails = () => {
             </p>
             <ul>
               <li>
-                <sc.LinkItem to="cast" state={{ location }}>
+                <sc.LinkItem to="cast" state={{ from: location.state?.from }}>
                   Cast
                 </sc.LinkItem>
               </li>
               <li>
-                <sc.LinkItem to="reviews" state={{ location }}>
+                <sc.LinkItem to="reviews" state={{ from: location.state?.from }}>
                   Reviews
                 </sc.LinkItem>
               </li>

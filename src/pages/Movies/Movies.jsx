@@ -28,7 +28,10 @@ const Movies = () => {
     e.preventDefault();
 
     const { value } = e.currentTarget.elements.query;
-    setSearchParams({query: value})
+
+    if (value) {
+      setSearchParams({query: value})
+    }
   };
 
   return (

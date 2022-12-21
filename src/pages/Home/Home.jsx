@@ -17,7 +17,7 @@ const Home = () => {
     <>
       <sc.H1>Trending today</sc.H1>
       <sc.List>
-        {trendingMovies &&
+        {trendingMovies.length &&
           trendingMovies.map(({ id, title }) => (
             <sc.Item key={id}>
               <sc.LinkItem to={`movies/${id}`} state={{ from: location }}>

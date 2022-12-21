@@ -15,7 +15,7 @@ const Cast = () => {
       .catch(console.log);
   }, [movieId]);
 
-  return movieCast.length > 0 ? (
+  return movieCast.length ? (
     <Ul>
       {movieCast.map(({ id, profile_path, name, character }) => (
         <Li key={id}>

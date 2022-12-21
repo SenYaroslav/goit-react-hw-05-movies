@@ -15,7 +15,7 @@ const Reviews = () => {
       .catch(console.log);
   }, [movieId]);
 
-  return movieReviews.length > 0 ? (
+  return movieReviews.length ? (
     <Ul>
       {movieReviews.map(({ id, author, content }) => (
         <Li key={id}>

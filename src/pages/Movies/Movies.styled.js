@@ -43,3 +43,12 @@ export const LinkItem = styled(Link)`
     color: #565656;
   }
 `;
+
+export const List = styled.ul`
+  margin-left: 10px;
+  font-size: 20px;
+`;
+
+export const Item = styled.li`
+  margin-top: 5px;
+`;

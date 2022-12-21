@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useSearchParams  } from 'react-router-dom';
-import { Container, Input, Button, LinkItem } from './Movies.styled';
+import { Container, Input, Button, LinkItem, List, Item } from './Movies.styled';
 import { searchMovies } from 'services/moviesApi';
 
 const Movies = () => {
@@ -50,15 +50,15 @@ const Movies = () => {
       </Container>
       {moviesList && (
         <div>
-          <ul>
+          <List>
             {moviesList.map(({ id, title }) => (
-              <li key={id}>
+              <Item key={id}>
                 <LinkItem to={`${id}`} state={{ from: location }}>
                   {title}
                 </LinkItem>
-              </li>
+              </Item>
             ))}
-          </ul>
+          </List>
         </div>
       )}
     </>

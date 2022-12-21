@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useSearchParams  } from 'react-router-dom';
 import { Container, Input, Button, LinkItem } from './Movies.styled';
 import { searchMovies } from 'services/moviesApi';
 
 const Movies = () => {
-  const [query, setQuery] = useState('');
   const [moviesList, setMoviesList] = useState(null);
   const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get('query')
 
   useEffect(() => {
     if (!query) {
@@ -27,7 +28,7 @@ const Movies = () => {
     e.preventDefault();
 
     const { value } = e.currentTarget.elements.query;
-    return setQuery(value.trim());
+    setSearchParams({query: value})
   };
 
   return (
@@ -49,7 +50,7 @@ const Movies = () => {
           <ul>
             {moviesList.map(({ id, title }) => (
               <li key={id}>
-                <LinkItem to={`${id}`} state={{ location }}>
+                <LinkItem to={`${id}`} state={{ from: location }}>
                   {title}
                 </LinkItem>
               </li>

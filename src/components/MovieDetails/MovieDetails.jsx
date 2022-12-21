@@ -54,12 +54,12 @@ const MovieDetails = () => {
             </p>
             <ul>
               <li>
-                <sc.LinkItem to="cast" state={{ from: location }}>
+                <sc.LinkItem to="cast" state={{ location }}>
                   Cast
                 </sc.LinkItem>
               </li>
               <li>
-                <sc.LinkItem to="reviews" state={{ from: location }}>
+                <sc.LinkItem to="reviews" state={{ location }}>
                   Reviews
                 </sc.LinkItem>
               </li>

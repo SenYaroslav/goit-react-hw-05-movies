@@ -18,7 +18,7 @@ const MovieDetails = () => {
       .then(res => setMovie(res.data))
       .catch(console.log);
   };
-console.log('location >>>', location)
+
   const BackLinkHref = location.state?.from ?? '/';
 
   return (
